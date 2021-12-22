@@ -197,3 +197,6 @@ create multi-remote
 
 fetch notes  
 `git fetch origin "refs/notes/*:refs/notes/*"`
+
+search the the full history of all files for a string  
+`query="<search-string>"; for hash in $(git log -G${query} --format="%h"); do echo; echo $hash; git show $hash | grep --color=always $query; done`
