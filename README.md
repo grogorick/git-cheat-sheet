@@ -14,11 +14,11 @@ count commits between commits
 `git rev-list <old-commit>..<new-commit> --count`
 
 fix upper/lowercase rename (on Windows)  
-`git mv <filename> foo`
+`git mv <filename> foo`  
 `git mv foo <filename>`
 
 word-wise diff  
-`git diff --word-dif`
+`git diff --word-dif`  
 `git diff --word-diff=color`
 
 character-wise diff  
@@ -46,20 +46,20 @@ initial pull only specific branch
 `git clone -b <branchname> --single-branch <repositiory-url>`
 
 add another branch (to a repo with only one cloned)  
-`git remote set-branches --add origin <remote-branch>`
+`git remote set-branches --add origin <remote-branch>`  
 `git fetch origin <remote-branch>:<local-branch>`
 
 set default remote for branch  
 `git branch --set-upstream-to=<remote>/<branch>`
 
-push to remote branch with different name
+push to remote branch with different name  
 `git push <remote-name> <local-branch>:<remote-branch>`
 
 change message of last (not yet pushed) commit  
 `git commit --amend -m "<new description>"`
 
 replace last commit (not yet pushed) with current state of files  
-`git add -u`
+`git add -u`  
 `git commit --amend -m "<new description>"`
 
 remove last commit (not yet pushed) but keep the current changes  
@@ -78,8 +78,8 @@ copy changes to stash with a description and reset to current revision
 `git stash save "<description>"`
 
 view stashed changes in detail  
-`git show stash`
-`git show stash@{<stash-index>}`  
+`git show stash`  
+`git show stash@{<stash-index>}`
 
 view list of modified files in stash  
 `git show stash --name-only`
@@ -127,14 +127,14 @@ list all branches and their remotes
 `git branch -a -vv`
 
 delete branch (remote and local)  
-`git branch --delete <branchname>`
+`git branch --delete <branchname>`  
 `git push --delete origin <branchname> `
 
 copy commit from other branch  
 `git cherry-pick <commit>`
 
-after commit A add (cherry-pick) multiple commits B..C
-`git reset --hard C`
+after commit A add (cherry-pick) multiple commits B..C  
+`git reset --hard C`  
 `git rebase --onto A B^`
 
 create tag  
@@ -174,13 +174,13 @@ try to recover deleted local files (not committed but staged)
 `mkdir RECOVERED ; for b in $(git fsck --lost-found | grep blob | awk '{print $3}'); do git cat-file -p $b > RECOVERED/$b ; done`
 
 add shallow submodule  
-`git submodule add <URL> <PATH>`
+`git submodule add <URL> <PATH>`  
 `git config -f .gitmodules submodule.<name>.shallow true`
 
 remove submodule  
-`git submodule deinit <path_to_submodule>`
-`git rm <path_to_submodule>`
-`git commit-m "Removed submodule"`
+`git submodule deinit <path_to_submodule>`  
+`git rm <path_to_submodule>`  
+`git commit-m "Removed submodule"`  
 `rm -rf .git/modules/<path_to_submodule>`
 
 ignore tracked file for future commits  
@@ -199,7 +199,7 @@ create a new git repository from a subdirectory (IN PLACE OPERATION - make a cop
 `git filter-branch --subdirectory-filter <subdirectory> -- --all`
 
 create multi-remote  
-`git remote add <remote-name> <url-to-first-remote-repo>`
+`git remote add <remote-name> <url-to-first-remote-repo>`  
 `git remote set-url --add <remote-name> <url-to-another-remote-repo>`
 
 fetch notes  
