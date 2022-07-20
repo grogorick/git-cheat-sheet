@@ -52,6 +52,9 @@ add another branch (to a repo with only one cloned)
 set default remote for branch  
 `git branch --set-upstream-to=<remote>/<branch>`
 
+push to remote branch with different name
+`git push <remote-name> <local-branch>:<remote-branch>`
+
 change message of last (not yet pushed) commit  
 `git commit --amend -m "<new description>"`
 
@@ -129,6 +132,10 @@ delete branch (remote and local)
 
 copy commit from other branch  
 `git cherry-pick <commit>`
+
+after commit A add (cherry-pick) multiple commits B..C
+`git reset --hard C`
+`git rebase --onto A B^`
 
 create tag  
 `git tag <tag-name> <commit>`
