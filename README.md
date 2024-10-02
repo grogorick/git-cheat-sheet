@@ -49,6 +49,9 @@ add another branch (to a repo with only one cloned)
 `git remote set-branches --add origin <remote-branch>`  
 `git fetch origin <remote-branch>:<local-branch>`
 
+add the branch of a pull request (including the --no-ff merge commit) for Azure DevOps
+`git fetch origin pull/<pr-number>/merge:pull/<pr-number>`
+
 set default remote for branch  
 `git branch --set-upstream-to=<remote>/<branch>`
 
